@@ -60,3 +60,27 @@ async def echo(client, message):
 	
  await  message.reply_text("Select language 👇",reply_to_message_id = message.message_id, reply_markup = keybord1) 
 
+@app.on_callback_query()
+async def translate_text(bot,update):
+  keybord6 =  InlineKeyboardMarkup([
+       [InlineKeyboardButton("Thai",callback_data = "th"),
+       InlineKeyboardButton("Turkish",callback_data = "tr"),
+       InlineKeyboardButton("Turkmen",callback_data ="tk")     
+       ],
+       [InlineKeyboardButton("Ukrainian",callback_data = "uk"),
+       InlineKeyboardButton("Urdu",callback_data = "ur"),
+       InlineKeyboardButton("Uyghur",callback_data ="ug")
+       
+       ],
+       [InlineKeyboardButton("Uzbek",callback_data = "uz"),
+       InlineKeyboardButton("Vietnamese",callback_data ="vi"),
+       InlineKeyboardButton("Welsh",callback_data = "cy")
+       
+       ],
+       [InlineKeyboardButton("Xhosa",callback_data = "xh"),
+       InlineKeyboardButton("Yiddish",callback_data = "yi"),
+       InlineKeyboardButton("Yoruba",callback_data = "yo")],
+       [InlineKeyboardButton("<--- Back",callback_data = "page5")
+       
+       ]
+ ])
